@@ -1,5 +1,5 @@
-services:
-  web:
-    image: httpd:2.4
-    ports:
+services: #コンテナの定義
+  web: #コンテナの名前
+    image: httpd:2.4 #使用するイメージの名前
+    ports: #Dockerホストとコンテあのポート番号の紐づけ
       - "8080:80"
