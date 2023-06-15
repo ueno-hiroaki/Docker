@@ -8,3 +8,11 @@ docker compose up -d
 ```
 docker container ls
 ```
+コンテナを停止
+```
+docker compose stop
+```
+コンテナを起動
+```
+docker compose start
+```
