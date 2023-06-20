@@ -1,0 +1,9 @@
+services:
+  web: #コンテナの名前
+    build: . #dockerfileをもとにコンテナを作成したいのでbuildを使う dockerfileまでのパスを記述する
+    environment:
+      FLASK_ENV: development #環境変数
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./src:/usr/src/app #バインドマウント
