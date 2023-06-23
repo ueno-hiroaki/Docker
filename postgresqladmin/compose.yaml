@@ -1,0 +1,27 @@
+services:
+  db:
+    image: postgres:14.2
+    #postgreSQLを構築するコンテナ
+    environment:
+      POSTGRES_DB: testdb
+      POSTGRES_USER: testuser
+      POSTGRES_PASSWORD: password
+    volumes:
+      - db-data:/var/lib/postgresql/data
+  pgadmin4:
+  #pgadmin4コンテナ
+    image: dpage/pgadmin4:6.9
+    depends_on:
+      - db
+    environment:
+    #初期管理者アカウント用のメールアドレス pgadmin4へログインする際に使用する
+      PGADMIN_DEFAULT_EMAIL: sample@gmail.com
+      #初期管理者アカウント用のパスワード
+      PGADMIN_DEFAULT_PASSWORD: samplepass
+    ports:
+      - "8080:80"
+    volumes:
+      - pgadmin4-data:/var/lib/pgadmin
+volumes:
+  db-data:
+  pgadmin4-data:
