@@ -23,7 +23,7 @@ services:
     ports:
       - "8080:80"
     volumes:
-    #ボリューム
+    #ボリュームマウント　30行にvolumesにもphpmyadmin-dataを書く
       - phpmyadmin-data:/sessions
 volumes:
   db-data:
